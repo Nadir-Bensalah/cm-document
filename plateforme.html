@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>ForgeMe QA</title>
+  <meta name="description" content="Aperçu de la plateforme de suivi des tests ForgeMe. Structure de démonstration, aucune donnée enregistrée.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+<body class="app-body">
+  <a class="skip-link" href="#view-overview">Aller au contenu</a>
+
+  <div class="app" data-demo>
+    <header class="app__bar">
+      <div class="app__bar-left">
+        <a class="app__back" href="./index.html">‹ Proposition</a>
+        <span class="app__brand">ForgeMe QA</span>
+      </div>
+      <span class="app__badge"><span class="demo-note__dot" aria-hidden="true"></span>Aperçu, structure de démonstration, aucune donnée de test enregistrée</span>
+    </header>
+
+    <div class="app__body">
+      <nav class="app__nav" aria-label="Sections de la plateforme">
+        <div class="demo__tabs" role="tablist" aria-orientation="vertical">
+          <button role="tab" id="tab-overview" aria-selected="true" aria-controls="view-overview" class="demo__tab is-active" type="button"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span>Vue d'ensemble</button>
+          <button role="tab" id="tab-campaigns" aria-selected="false" aria-controls="view-campaigns" class="demo__tab" type="button" tabindex="-1"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span>Campagnes</button>
+          <button role="tab" id="tab-testers" aria-selected="false" aria-controls="view-testers" class="demo__tab" type="button" tabindex="-1"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5a5 5 0 0 1 6 4.5"/></svg></span>Testeurs</button>
+          <button role="tab" id="tab-scenarios" aria-selected="false" aria-controls="view-scenarios" class="demo__tab" type="button" tabindex="-1"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5h10M9 12h10M9 19h10"/><path d="m4 5 1 1 2-2M4 12l1 1 2-2M4 19l1 1 2-2"/></svg></span>Scénarios</button>
+          <button role="tab" id="tab-issues" aria-selected="false" aria-controls="view-issues" class="demo__tab" type="button" tabindex="-1"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 10v4M12 17.5v.5"/></svg></span>Anomalies</button>
+          <button role="tab" id="tab-auto" aria-selected="false" aria-controls="view-auto" class="demo__tab" type="button" tabindex="-1"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span>Tests automatisés</button>
+          <button role="tab" id="tab-history" aria-selected="false" aria-controls="view-history" class="demo__tab" type="button" tabindex="-1"><span class="demo__tab-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>Historique</button>
+        </div>
+      </nav>
+
+      <main class="app__views">
+
+        <section class="demo__view is-active" id="view-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+          <header class="demo__header">
+            <h1 class="demo__title">Vue d'ensemble</h1>
+            <p class="demo__sub">Une campagne à la fois, avec l'état de chaque volet.</p>
+          </header>
+          <div class="demo__kpis">
+            <div class="kpi"><span class="kpi__label">Campagne en cours</span><span class="kpi__value">Aucune</span></div>
+            <div class="kpi"><span class="kpi__label">Scénarios exécutés</span><span class="kpi__value">En attente</span></div>
+            <div class="kpi"><span class="kpi__label">Anomalies ouvertes</span><span class="kpi__value">En attente</span></div>
+            <div class="kpi"><span class="kpi__label">Dernière exécution automatique</span><span class="kpi__value">En attente</span></div>
+          </div>
+          <div class="empty">
+            <p class="empty__title">La campagne n'a pas encore commencé.</p>
+            <p class="empty__text">Les chiffres se rempliront au lancement, puis se mettront à jour au fil des retours et des exécutions.</p>
+          </div>
+        </section>
+
+        <section class="demo__view" id="view-campaigns" role="tabpanel" aria-labelledby="tab-campaigns" tabindex="0" hidden>
+          <header class="demo__header">
+            <h1 class="demo__title">Campagnes</h1>
+            <p class="demo__sub">Une campagne par version de ForgeMe. Chacune garde ses scénarios, ses testeurs et ses résultats.</p>
+          </header>
+          <div class="table" role="table" aria-label="Structure de la liste des campagnes">
+            <div class="table__head" role="row"><span role="columnheader">Campagne</span><span role="columnheader">Version</span><span role="columnheader">Période</span><span role="columnheader">Testeurs</span><span role="columnheader">Avancement</span><span role="columnheader">Statut</span></div>
+          </div>
+          <div class="empty">
+            <p class="empty__title">Aucune campagne pour le moment.</p>
+            <p class="empty__text">La première sera celle de cette proposition. Les suivantes s'ajouteront ici, version après version.</p>
+          </div>
+        </section>
+
+        <section class="demo__view" id="view-testers" role="tabpanel" aria-labelledby="tab-testers" tabindex="0" hidden>
+          <header class="demo__header">
+            <h1 class="demo__title">Testeurs</h1>
+            <p class="demo__sub">Qui teste quoi, sur quel appareil, et où chacun en est.</p>
+          </header>
+          <div class="table" role="table" aria-label="Structure de la liste des testeurs">
+            <div class="table__head" role="row"><span role="columnheader">Nom</span><span role="columnheader">Profil</span><span role="columnheader">Plateforme</span><span role="columnheader">Scénarios attribués</span><span role="columnheader">Avancement</span><span role="columnheader">Statut</span></div>
+          </div>
+          <div class="empty">
+            <p class="empty__title">Les testeurs apparaîtront ici au lancement de la campagne.</p>
+          </div>
+        </section>
+
+        <section class="demo__view" id="view-scenarios" role="tabpanel" aria-labelledby="tab-scenarios" tabindex="0" hidden>
+          <header class="demo__header">
+            <h1 class="demo__title">Scénarios</h1>
+            <p class="demo__sub">Chaque scénario, sa fonctionnalité, sa plateforme et son dernier résultat.</p>
+          </header>
+          <div class="table" role="table" aria-label="Structure de la liste des scénarios">
+            <div class="table__head" role="row"><span role="columnheader">Scénario</span><span role="columnheader">Fonctionnalité</span><span role="columnheader">Plateforme</span><span role="columnheader">Type</span><span role="columnheader">Statut</span><span role="columnheader">Dernière exécution</span></div>
+          </div>
+          <div class="empty">
+            <p class="empty__title">Aucun scénario enregistré pour le moment.</p>
+            <p class="empty__text">Les scénarios écrits pendant la préparation seront chargés ici, puis enrichis au fil des versions.</p>
+          </div>
+        </section>
+
+        <section class="demo__view" id="view-issues" role="tabpanel" aria-labelledby="tab-issues" tabindex="0" hidden>
+          <header class="demo__header">
+            <h1 class="demo__title">Anomalies</h1>
+            <p class="demo__sub">Chaque anomalie validée, avec sa gravité, son statut et ses étapes de reproduction.</p>
+          </header>
+          <div class="chips" role="group" aria-label="Filtrer par gravité">
+            <button type="button" class="chip is-active" aria-pressed="true">Toutes</button>
+            <button type="button" class="chip" aria-pressed="false">Bloquantes</button>
+            <button type="button" class="chip" aria-pressed="false">Critiques</button>
+            <button type="button" class="chip" aria-pressed="false">Importantes</button>
+            <button type="button" class="chip" aria-pressed="false">Mineures</button>
+          </div>
+          <div class="table" role="table" aria-label="Structure de la liste des anomalies">
+            <div class="table__head table__head--issues" role="row"><span role="columnheader">Référence</span><span role="columnheader">Titre</span><span role="columnheader">Plateforme</span><span role="columnheader">Gravité</span><span role="columnheader">Statut</span><span role="columnheader">Testeur</span><span role="columnheader">Date</span><span role="columnheader">Actions</span></div>
+          </div>
+          <div class="empty">
+            <p class="empty__title">Aucune anomalie enregistrée pour le moment.</p>
+          </div>
+        </section>
+
+        <section class="demo__view" id="view-auto" role="tabpanel" aria-labelledby="tab-auto" tabindex="0" hidden>
+          <header class="demo__header">
+            <h1 class="demo__title">Tests automatisés</h1>
+            <p class="demo__sub">Les suites de tests par plateforme, leurs exécutions et le détail de chacune.</p>
+          </header>
+          <div class="auto">
+            <div class="auto__suites">
+              <div class="table" role="table" aria-label="Structure des suites de tests">
+                <div class="table__head table__head--suites" role="row"><span role="columnheader">Suite</span><span role="columnheader">Plateforme</span><span role="columnheader">Statut</span><span role="columnheader">Dernière exécution</span></div>
+              </div>
+              <div class="empty empty--compact">
+                <p class="empty__title">Les résultats apparaîtront ici dès la première exécution.</p>
+              </div>
+              <button type="button" class="btn" data-open-run>Voir le détail d'une exécution</button>
+            </div>
+            <aside class="auto__run" id="run-panel" hidden>
+              <div class="auto__run-head">
+                <p class="auto__run-title">Détail d'une exécution</p>
+                <button type="button" class="close" aria-label="Fermer le panneau" data-close-run>×</button>
+              </div>
+              <dl class="auto__run-fields">
+                <div><dt>Suite</dt><dd>En attente</dd></div>
+                <div><dt>Plateforme</dt><dd>En attente</dd></div>
+                <div><dt>Version testée</dt><dd>En attente</dd></div>
+                <div><dt>Durée</dt><dd>En attente</dd></div>
+                <div><dt>Résultat</dt><dd>En attente</dd></div>
+              </dl>
+              <p class="auto__run-note">Chaque exécution listera ici ses étapes, avec ce qui a réussi, ce qui a échoué et les captures correspondantes.</p>
+            </aside>
+          </div>
+        </section>
+
+        <section class="demo__view" id="view-history" role="tabpanel" aria-labelledby="tab-history" tabindex="0" hidden>
+          <header class="demo__header">
+            <h1 class="demo__title">Historique</h1>
+            <p class="demo__sub">Tout ce qui s'est passé, campagne après campagne.</p>
+          </header>
+          <div class="timeline-empty" aria-hidden="true">
+            <span class="timeline-empty__line"></span>
+            <span class="timeline-empty__node"></span>
+            <span class="timeline-empty__node"></span>
+            <span class="timeline-empty__node"></span>
+          </div>
+          <div class="empty">
+            <p class="empty__title">L'historique des campagnes, tests et anomalies sera conservé ici.</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

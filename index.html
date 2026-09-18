@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Document privé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <main class="porte-page" id="porte">
+    <form class="prive prive--porte" id="porte-forme" novalidate>
+      <div class="marque marque--porte">
+        <span class="marque__part">
+          <img class="marque__logo" src="./marque-1.png" alt="" width="54" height="54" decoding="async">
+        </span>
+        <span class="marque__lien" aria-hidden="true"></span>
+        <span class="marque__part">
+          <img class="marque__logo" src="./marque-2.png" alt="" width="54" height="54" decoding="async">
+        </span>
+      </div>
+      <h1 class="prive-titre">Document privé</h1>
+      <p class="prive-sous">Cette page est chiffrée. Saisissez la phrase de passe qui vous a été transmise.</p>
+      <div class="prive-saisie">
+        <label class="visually-hidden" for="porte-mdp">Phrase de passe</label>
+        <input class="prive-champ" type="password" id="porte-mdp" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Phrase de passe" enterkeyhint="go">
+        <button class="btn btn--primary" type="submit" id="porte-ouvrir">Ouvrir</button>
+      </div>
+      <p class="prive-etat" id="porte-etat" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <div id="contenu" hidden></div>
+
+  <div class="verrou" id="verrou" hidden role="alertdialog" aria-labelledby="verrou-titre">
+    <div class="verrou-boite">
+      <p class="verrou-titre" id="verrou-titre">Session fermée</p>
+      <p class="verrou-texte">Le document s'est refermé après cinq minutes sans activité.</p>
+      <button class="btn btn--primary" type="button" id="verrou-rouvrir">Saisir à nouveau la phrase</button>
+    </div>
+  </div>
+
+
+
+  <script src="./app.js"></script>
+  <script type="module" src="./coffre.js"></script>
+</body>
+</html>
